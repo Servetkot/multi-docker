@@ -9,14 +9,14 @@ script:
   - docker run -e CI=true servetkot/react-test npm test
 
 after_success:
-  - docker build -t servetkot/multi-client ./client
-  - docker build -t servetkot/multi-nginx ./nginx
-  - docker build -t servetkot/multi-server ./server
-  - docker build -t servetkot/multi-worker ./worker
+  - docker build -t servet1995/multi-client ./client
+  - docker build -t servet1995/multi-nginx ./nginx
+  - docker build -t servet1995/multi-server ./server
+  - docker build -t servet1995/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin  
   # Push images to docker-hub
-  - docker push servetkot/multi-client
-  - docker push servetkot/multi-nginx
-  - docker push servetkot/multi-server
-  - docker push servetkot/multi-worker
+  - docker push servet1995/multi-client
+  - docker push servet1995/multi-nginx
+  - docker push servet1995/multi-server
+  - docker push servet1995/multi-worker
